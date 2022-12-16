@@ -9,5 +9,6 @@
 
     @include responsive(tablet) {
         background-image: url('../assets/images/bg-desktop-light.jpg');
+        height: 300px;
     }
 }

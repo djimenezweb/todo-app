@@ -28,26 +28,41 @@
 
     <form class="form">
       <label for="todo-input" class="form__label"></label>
-      <input id="todo-input" type="text" class="form__input" placeholder="Create a new todo…">
+      <input id="todo-input" name="todo-input" type="text" class="form__input" placeholder="Create a new todo…">
     </form>
 
+    <div id="todo-list" class="todo-list">
+
+      <div class="task-container">
+        <div class="task">
+          <input type="checkbox" class="task__input" id="xxx" hidden>
+          <label for="xxx" class="task__label">Tarea</label>
+        </div>
+        <img src="assets/images/icon-cross.svg" alt="Delete" class="task__delete">
+      </div>
+
+      <ul class="todo-list__footer">
+        <li class="todo-list__counter">X items left</li>
+        <div class="todo-list__container">
+          <li class="todo-list__filter">All</li>
+          <li class="todo-list__filter">Active</li>
+          <li class="todo-list__filter">Completed</li>
+        </div>
+        <li class="todo-list__clear">Clear Completed</li>
+      </ul>
+
+    </div>
+
+    Drag and drop to reorder list
   </main>
 
 
 
 
 
-  <!-- Add dynamic number --> items left
+  <!-- Add dynamic number -->
 
-  All
-  Active
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-
+  <script src="js/scripts.js"></script>
 </body>
 
 </html>

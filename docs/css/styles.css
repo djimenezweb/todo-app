@@ -6,7 +6,7 @@
   --completed: hsl(233, 11%, 84%);
   --body-background: hsl(0, 0%, 98%);
   --list-background: white;
-  --radius: hsl(236, 33%, 92%);
+  --lines: hsl(236, 33%, 92%);
 }
 
 body.dark {
@@ -381,6 +381,10 @@ a {
   color: inherit;
 }
 
+* {
+  outline: 0px dashed rgba(255, 0, 0, 0.6);
+}
+
 body {
   background-color: var(--body-background);
   font-family: "Josefin Sans", sans-serif;
@@ -402,11 +406,11 @@ body {
 @media screen and (min-width: 640px) {
   .header {
     background-image: url("../assets/images/bg-desktop-light.jpg");
+    height: 300px;
   }
 }
 
 .main {
-  outline: 1px dashed red;
   padding: 0 1.5rem;
   width: 540px;
   left: 50%;
@@ -429,12 +433,13 @@ body {
 .form {
   background-color: var(--list-background);
   width: 100%;
-  height: 48px;
+  height: 4rem;
   border-radius: 5px;
   display: flex;
   align-items: center;
   gap: 24px;
   padding: 24px;
+  margin-bottom: 24px;
 }
 .form__input {
   border: none;
@@ -443,7 +448,7 @@ body {
   height: 48px;
 }
 .form__label {
-  border: 1px solid var(--radius);
+  border: 1px solid var(--lines);
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -452,4 +457,51 @@ body {
 
 ::placeholder {
   color: var(--soft-text-color);
+}
+
+.todo-list {
+  background-color: var(--list-background);
+  border-radius: 5px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.todo-list__footer {
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--soft-text-color);
+  display: flex;
+  justify-content: space-between;
+}
+.todo-list__container {
+  gap: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task {
+  width: 100%;
+}
+.task-container {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--lines);
+}
+.task__label {
+  position: relative;
+  left: 48px;
+  width: 100%;
+  color: var(--item);
+}
+.task__label::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--lines);
+  border-radius: 50%;
+  left: -48px;
+  top: 0;
 }
