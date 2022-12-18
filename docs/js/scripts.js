@@ -8,43 +8,44 @@
       </div>
 */
 const formInput = document.getElementById('todo-input')
+const form = document.getElementById('form')
 
 const generateTimeStamp = () => Date.now()
 
 function addTask(task) {
 
-    const timeStamp = generateTimeStamp();
+  const timeStamp = generateTimeStamp();
 
-    const newTaskContainer = document.createElement('div')
-    newTaskContainer.classList.add("task-container")
+  const newTaskContainer = document.createElement('div')
+  newTaskContainer.classList.add("task-container")
 
-    const newTask = document.createElement('div')
-    newTask.classList.add('task')
+  const newTask = document.createElement('div')
+  newTask.classList.add('task')
 
-    const newInput = document.createElement('input')
-    newInput.type = "checkbox"
-    newInput.id = timeStamp
-    newInput.classList.add("task__input")
+  const newInput = document.createElement('input')
+  newInput.type = "checkbox"
+  newInput.id = timeStamp
+  newInput.classList.add("task__input")
 
-    const newLabel = document.createElement('label')
-    newLabel.classList.add("task__label")
-    newLabel.htmlFor = timeStamp
-    newLabel.textContent = task
+  const newLabel = document.createElement('label')
+  newLabel.classList.add("task__label")
+  newLabel.htmlFor = timeStamp
+  newLabel.textContent = task
 
-    const newDelete = document.createElement('img')
-    newDelete.src = "assets/images/icon.cross.svg"
-    newDelete.classList.add('task__delete')
+  const newDelete = document.createElement('img')
+  newDelete.src = "assets/images/icon-cross.svg"
+  newDelete.classList.add('task__delete')
 
 
-    newTask.append(newLabel)
-    newTask.prepend(newInput)
-    newTaskContainer.prepend(newTask)
-    newTaskContainer.append(newDelete)
+  newTask.append(newLabel)
+  newTask.prepend(newInput)
+  newTaskContainer.prepend(newTask)
+  newTaskContainer.append(newDelete)
 
-    return newTaskContainer
+  return newTaskContainer
 }
 
-formInput.addEventListener('submit', (e) => {
-    e.preventDefault()
-    document.getElementById('todo-list').prepend(addTask(e.target.todoInput.value))
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  document.getElementById('todo-list').prepend(addTask(e.target.todo.value))
 })

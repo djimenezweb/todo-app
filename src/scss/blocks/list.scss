@@ -33,7 +33,9 @@
         border-bottom: 1px solid var(--lines);
     }
 
-    &__input {}
+    &__input {
+        display: none;
+    }
 
     &__label {
         position: relative;

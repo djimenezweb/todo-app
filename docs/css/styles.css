@@ -489,6 +489,9 @@ body {
   padding: 1.5rem;
   border-bottom: 1px solid var(--lines);
 }
+.task__input {
+  display: none;
+}
 .task__label {
   position: relative;
   left: 48px;
