@@ -11,6 +11,7 @@ const generateTimeStamp = () => Date.now()
 const formInput = document.getElementById('todo-input')
 const form = document.getElementById('form')
 const todoList = document.getElementById('todo-list')
+const clear = document.getElementById('clear')
 
 function addTask(task) {
 
@@ -58,4 +59,11 @@ todoList.addEventListener('click', (e) => {
   const element = document.getElementById(`id-${e.target.dataset.id}`)
   element.remove()
 
+})
+
+clear.addEventListener('click', (e) => {
+  const checked = document.querySelectorAll(':checked')
+  checked.forEach(element => {
+    element.parentElement.parentElement.remove()
+  });
 })

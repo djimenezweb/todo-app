@@ -476,6 +476,9 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.todo-list__clear {
+  cursor: pointer;
+}
 
 .task {
   width: 100%;
@@ -508,8 +511,14 @@ body {
   left: -48px;
   top: 0;
 }
-.task__input:checked + .task__label {
+
+.task__input:checked + .task__label::before {
   background-image: url("../assets/images/icon-check.svg"), linear-gradient(135deg, hsl(192deg, 100%, 67%), hsl(280deg, 87%, 65%));
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.task__input:checked + .task__label {
+  color: var(--completed);
+  text-decoration: line-through;
 }
